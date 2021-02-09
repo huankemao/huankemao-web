@@ -1,0 +1,23 @@
+{
+  "id": "2196915",
+  "name": "scrm",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "343234",
+      "name": "问号",
+      "font_class": "wenhao",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "4765736",
+      "name": "question-circle",
+      "font_class": "question-circle",
+      "unicode": "e782",
+      "unicode_decimal": 59266
+    }
+  ]
+}

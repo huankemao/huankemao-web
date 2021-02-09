@@ -1,0 +1,39 @@
+{
+  "name": "test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "clipboard": "^2.0.6",
+    "core-js": "^3.6.5",
+    "echarts": "^5.0.1",
+    "element-ui": "^2.14.1",
+    "file-saver": "^2.0.5",
+    "js-md5": "^0.7.3",
+    "qrcodejs2": "0.0.2",
+    "qs": "^6.9.4",
+    "script-loader": "^0.7.2",
+    "vue": "^2.6.11",
+    "vue-cookies": "^1.7.4",
+    "vue-puzzle-vcode": "^1.1.4",
+    "vue-router": "^3.2.0",
+    "vue-tag-textarea": "^0.1.0",
+    "vuex": "^3.4.0",
+    "wangeditor": "^4.5.3",
+    "xlsx": "^0.16.9"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-polyfill": "^6.26.0",
+    "less": "^3.0.4",
+    "less-loader": "^5.0.0",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
