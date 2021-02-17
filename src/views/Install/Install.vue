@@ -44,7 +44,7 @@
             <span class="c-title">《唤客猫企业微信SCRM系统》开源许可协议</span>
             <div class="fonts">
               <h2>中文版授权协议 适用于中文用户</h2>
-              <h2>版权所有 ：© 2020 成都唤客猫科技有限公司保留所有权利。</h2>
+              <h2>版权所有 ：© 2020-2021 成都唤客猫科技有限公司（以下简称唤客猫公司）保留所有权利。</h2>
               <p class="font-style">
                 感谢您选择唤客猫产品。希望我们的努力能为您提供一个高效、快速、强大的SCRM解决方案。唤客猫公司网址为https://huankemao.com
                 。
@@ -699,7 +699,7 @@
         >
       </div>
     </template>
-    <span class="copyright">COPYRIGHT ©唤客猫 2020 All RIGHTS RESERVED. </span>
+    <span class="copyright">COPYRIGHT ©唤客猫 2020-2021 All RIGHTS RESERVED. </span>
     <div class="alert" v-show="alertVisible">
       <div class="alert-main">
         <i class="el-icon-error error fs30"></i>
