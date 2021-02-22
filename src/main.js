@@ -19,11 +19,14 @@ import {
 } from './api/index';
 import '@/assets/css/reset.css';
 import 'element-ui/lib/theme-chalk/index.css';
- import {
+import {
 	showLoaing,
 	hideLoading,
 } from './util/utils';
 import './assets/iconfont/iconfont.css';
+import {
+	customMessage
+} from '@/util/utils';
 
 import * as echarts from 'echarts';
 
@@ -33,6 +36,7 @@ Vue.component('SelectTree', SelectTree);
 Vue.use(ElementUI);
 Vue.use(VueCookies);
 
+Vue.prototype.$message = customMessage;
 Vue.prototype.showLoaing = showLoaing;
 Vue.prototype.hideLoading = hideLoading;
 Vue.prototype.$echarts = echarts;

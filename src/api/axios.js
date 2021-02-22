@@ -10,10 +10,14 @@ import router from '../router/index';
 const instance = axios.create({});
 instance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
-let source = axios.CancelToken.source();
+// 获取CancelToken
+const CancelToken = axios.CancelToken;
+const source = CancelToken.source();
 // 添加请求拦截器
 instance.interceptors.request.use(function (config) {
+    // 全局添加cancelToken
     config.cancelToken = source.token;
+
     // 在发送请求之前做些什么
     let time = parseInt(new Date().getTime() / 1000);
     let user_id = localStorage.getItem('user_id') || '';
@@ -57,9 +61,11 @@ instance.interceptors.response.use(function (response) {
         return Promise.resolve(response.data);
     }
 }, function (error) {
-
-    // 对响应错误做点什么
-    return Promise.reject(error);
+    if (axios.isCancel(error)) { // 取消请求的情况下，终端Promise调用链
+        return new Promise(() => {});
+    } else {
+        return Promise.reject(error);
+    }
 });
 
 export default instance;

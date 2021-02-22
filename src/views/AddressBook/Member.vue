@@ -305,6 +305,8 @@ export default {
       if (val) {
         this.user_id = "";
         this.reqDepartmentStaff(val);
+      } else {
+        this.reqGetSoloStaff();
       }
     },
   },
@@ -366,6 +368,18 @@ export default {
     // 根据部门Code获取成员列表
     async reqDepartmentStaff(code) {
       let res = await reqDepartmentStaff({ code });
+      if (res.code === 200) {
+        this.staffList = res.data;
+      } else {
+        this.staffList = [];
+      }
+    },
+    // 获取全部成员列表
+    async reqGetSoloStaff() {
+      let res = await reqGetSoloStaff({
+        page: 1,
+        limit: 10000,
+      });
       if (res.code === 200) {
         this.staffList = res.data;
       } else {
