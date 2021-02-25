@@ -18,10 +18,11 @@
           <span></span>
           <span>企业微信配置</span>
         </p>
-        <span class="info" v-show="success"
+        <span class="info" v-if="init">当前未配置，数据无法同步，请先配置</span>
+        <span class="info" v-else-if="success"
           >数据同步成功，无法修改配置。如需重新配置，请重新安装系统（重新安装需删除应用根目录下的install/install.lock）</span
         >
-        <span class="info" v-show="!success">
+        <span class="info" v-else-if="lose">
           配置信息有误，数据同步失败，请重新修改配置</span
         >
         <el-form
@@ -438,6 +439,8 @@ export default {
         ],
       },
       success: false,
+      lose: false,
+      init: false,
       page: 1,
       limit: 10,
       keyword: "",
@@ -508,8 +511,14 @@ export default {
               this.fileList = [];
             }
             if (Boolean(res[0].data[0].wxk_id)) {
+              this.init = false;
+              this.success = true;
+              this.lose = false;
               this.wxIdDisabled = true;
             } else {
+              this.init = false;
+              this.success = false;
+              this.lose = true;
               this.getToken();
               this.getKey();
               this.reqGetConfigRandom();
@@ -521,6 +530,9 @@ export default {
               this.appIdDisabled = false;
             }
           } else {
+            this.init = true;
+            this.success = false;
+            this.lose = false;
             this.form = {
               wxk_address_book_secret: "",
               wxk_id: "",
@@ -589,10 +601,10 @@ export default {
       this.loadingText = "";
       if (res.code == 200) {
         this.getConfigAll();
-        this.$message.success("项目初始化同步成功！");
+        this.$message.success("同步成功！");
       } else {
         this.reqDelConfig();
-        this.$message.error("项目初始化同步失败！");
+        this.$message.error("同步失败！");
       }
     },
 

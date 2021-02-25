@@ -2560,7 +2560,7 @@ export default {
               url: this.link.data.link
                 ? this.link.data.link
                 : this.baseURL +
-                  "/article-preview/index.html?id=" +
+                  "/article-preview/huankemao_h5.html?id=" +
                   this.link.data.id +
                   "&type=1",
               // url:
